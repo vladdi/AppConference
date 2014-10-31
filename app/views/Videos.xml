@@ -1,4 +1,7 @@
 <Alloy>
-	<View class="container">
-	</View>
+	<Tab title="Videos">
+		<Window title="Videos">
+			
+		</Window>
+	</Tab>
 </Alloy>

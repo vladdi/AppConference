@@ -1,4 +1,3 @@
-
-".container" : {
-  
+"Window": {
+	backgroundColor : "#fff"
 }

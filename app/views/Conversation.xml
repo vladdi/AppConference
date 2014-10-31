@@ -1,4 +1,7 @@
 <Alloy>
-	<View class="container">
-	</View>
+	<Tab title="Conversation">
+		<Window title="Conversation">
+			
+		</Window>
+	</Tab>
 </Alloy>

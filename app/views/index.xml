@@ -1,5 +1,8 @@
 <Alloy>
-	<Window class="container">
-		<Label id="label" onClick="doClick">Hola mundo, arrancamos</Label>
-	</Window>
+	<TabGroup id="tabGroup">
+		<Require src="Schedule" />
+		<Require src="Venue" />
+		<Require src="Conversation" />
+		<Require src="Videos" />
+	</TabGroup>
 </Alloy>
