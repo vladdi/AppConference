@@ -1,3 +1,23 @@
 "Window": {
 	backgroundColor : "#fff"
+},
+"TableViewRow": { 
+    font: { 
+       fontSize: '36pt' 
+    }, 
+    layout: "vertical",
+    height:"auto"
+},
+"#image":{
+	height:"250",
+	width: "100%",
+	top:10,
+	image: '/images/conf.jpg'
+},
+"Label":{
+	layout:"vertical",
+	color: "#000000"
 }
+
+
+           
