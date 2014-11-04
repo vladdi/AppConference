@@ -1,7 +1,26 @@
 <Alloy>
 	<Tab title="Venue">
 		<Window title="Venue">
-			
+			<TableView>
+				<TableViewRow>
+					<Label> 
+						Mozilla Community Space Manila (MozSpaceMNL)
+						L10n Wednesday (Tagalog Firefox OS Translation Sprint)
+					</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<ImageView id="image"></ImageView>
+				</TableViewRow>
+				<TableViewRow>
+					<Label id="direccion">Molave Bldg, 2231 Chino Roces Ave, Makati, Metro Manila, Filipinas</Label>
+					<Label id="telefono"> Telefono +44 1706 815678</Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label>
+						 Every Wednesday starting 05 Nov 2014 UFN (Until Further Notice) is L10n Wednesday for the Mozilla Philippines Community. Join us live from the Mozilla Community Space Manila (MozSpaceMNL) or participate online. Attendees are required to bring their own devices to participate in the L10n sprint for Tagalog Firefox OS.
+					</Label>
+				</TableViewRow>
+			</TableView>
 		</Window>
 	</Tab>
 </Alloy>
