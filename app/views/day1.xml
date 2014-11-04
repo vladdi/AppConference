@@ -1,0 +1,14 @@
+<Alloy>
+	<Window class="container">
+		<ListView id="dynamicListView">
+			<Templates>
+				<ItemTemplate name="horario_only" height="100">
+					<View layout="horizontal" left="10">
+						<Label bindId="horario_label"/>
+						<Label bindId="title_label"/>
+					</View>
+				</ItemTemplate>							
+			</Templates>
+		</ListView>	
+	</Window>
+</Alloy>

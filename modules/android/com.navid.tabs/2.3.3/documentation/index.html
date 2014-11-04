@@ -1,0 +1,163 @@
+<h1>tabs Module</h1>
+<h2>Description</h2>
+<p>This module is like Google Play tabs and ViewPager whit:</p>
+<ul>
+<li>Support RTL ( Right To Left )</li>
+<li>Customizing color of ( Indicator, Underline, Text, Tabs Background, Separator )</li>
+<li>Add or Remove tabs in runtime</li>
+<li>Changed all color in runtime</li>
+<li>Using custom font and style ( Appcelerator font object )</li>
+<li>Set current tab ( only creation time yet )</li>
+<li>show tabs in two style ( Scrolling, Adjust with screen width )</li>
+<li>set padding</li>
+<li>4 events supported ( Touch, Page Scrolled, Page Selected, Page Scroll State Changed )</li>
+<li>Supported all UI element that it extends of View object except Ti.UI.Window ( ex. TextField, Button, View, Scroll View, etc. )</li>
+<li>Set Tab height</li>
+<li>supported android theme resource like Holo theme for all colors</li>
+</ul>
+<h2>Accessing the tabs Module</h2>
+<p>To access this module from JavaScript, you would do the following:</p>
+<pre><code>var module = require("com.navid.tabs");
+var tabs = module.createPagerTabs();
+</code></pre>
+<p>The module variable is a reference to the Module object.</p>
+<p>The tabs variable is a instance of viewpager</p>
+<h2>Reference</h2>
+<p>This module use https://github.com/astuetz/PagerSlidingTabStrip with some changes</p>
+<p>Fork repository is here:
+https://github.com/dreamlearn/PagerSlidingTabStrip</p>
+<h3>tabs.createPagerTabs</h3>
+<p>// open a single window
+<code>var win = Ti.UI.createWindow();</code></p>
+<p><code>win.open();</code></p>
+<p><code>var module = require('com.navid.tabs');</code></p>
+<p><code>var tabs = tabs.createPagerTabs();</code></p>
+<p><code>win.add(tabs)</code></p>
+<h3>tabs.property</h3>
+<ul>
+<li>tab ( Object)<ul>
+<li>color ( Text color )</li>
+<li>colorResource ( Android resource string, ex. "holo_blue_dark" )</li>
+<li>indicatorColor</li>
+<li>indicatorResource</li>
+<li>underlineColor</li>
+<li>underlineResource</li>
+<li>dividerColor</li>
+<li>dividerResource</li>
+<li>backgroundColor</li>
+<li>backgroundResource</li>
+<li>indicatorHeight</li>
+<li>underlineHeight</li>
+<li>dividerPadding</li>
+<li>upperCase ( if set true all tabs title will show capital case, default is false )</li>
+<li>shouldExpand ( if set true the width tabs adjusted with screen width, if set false the tab enabled scrolling. default is false )</li>
+<li>padding  ( only right padding and left padding )</li>
+<li>alignment ( module.ALIGNMENT_RIGHT or module.ALIGNMENT_LEFT, default is  module.ALIGNMENT_LEFT )</li>
+<li>font ( same as Appcelerator font object )</li>
+</ul>
+</li>
+<li>views<ul>
+<li>array<ul>
+<li>[0]</li>
+<li>title ( Title of tab )</li>
+<li>view ( Object of Appcelerator view ( Button, Label, View, ImageView and etc... except Window )</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>current ( set current tab in first time, if alignment set with ALIGNMENT_RIGHT detects itself and select tab from right to left, ex. the 1 index is first tab in right )</li>
+</ul>
+<p>The priority of color and color resource is with Color, if color not set use its resource if it set
+ex.
+{
+    color: "red",
+    colorResource: "holo_blue_light"
+}</p>
+<p>text will be red and colorResource will be ignored
+}</p>
+<h2>Usage</h2>
+<p>// open a single window
+var win = Ti.UI.createWindow();
+win.open();</p>
+<p>var tabs = require('com.navid.tabs');</p>
+<p>var text = Ti.UI.createTableView({
+    title: "NAVID",
+    backgroundColor: "white",
+    data: [
+        {title: "1"},
+        {title: "2"},
+        {title: "3"},
+        {title: "4"},
+        {title: "5"}
+    ]
+});</p>
+<p>var text2 = Ti.UI.createTableView({
+    title: "NAVID",
+    backgroundColor: "white",
+    data: [
+        {title: "1"},
+        {title: "2"},
+        {title: "3"},
+        {title: "4"},
+        {title: "5"},
+        {title: "6"}
+    ]
+});</p>
+<p>var text3 = Ti.UI.createTableView({
+    title: "NAVID",
+    backgroundColor: "white",
+    data: [
+        {title: "1"},
+        {title: "2"}
+    ]
+});</p>
+<p>var tabs = tabs.createPagerTabs({
+    current: 4,
+    tab: {
+        indicatorResource: "holo_blue_light",
+        colorResource: "holo_blue_light",
+        backgroundColor: "white",
+        alignment: tabs.ALIGNMENT_RIGHT
+    },
+    views: [
+        {
+            title: "Test1",
+            view: text
+        },
+        {
+            title: "Test2",
+            view: text2
+        },
+        {
+            title: "Test3",
+            view: text3
+        }
+    ]
+});</p>
+<p>proxy.addEventListener(tabs.PAGE_SCROLLED_EVENT_NAME, function () {
+    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+});
+proxy.addEventListener(tabs.PAGE_SELECTED_EVENT_NAME, function () {
+    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+});
+proxy.addEventListener(tabs.PAGE_SCROLL_STATE_CHANGED_EVENT_NAME, function () {
+    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+});
+proxy.addEventListener(tabs.CLICK_EVENT_NAME, function () {
+    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+});
+proxy.addEventListener(tabs.LONG_CLICK_EVENT_NAME, function () {
+    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+});
+proxy.addEventListener(tabs.TOUCH_EVENT_NAME, function () {
+    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+});
+proxy.addEventListener(tabs.FOCUS_CHANGE_EVENT_NAME, function () {
+    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+});</p>
+<p>win.add(tabs);</p>
+<h2>Author</h2>
+<p>Full Name: Navid Ghahramani</p>
+<p>Email: ghahramani.navid@gmail.com</p>
+<h2>License</h2>
+<p>It's open source and it's under Apache licenses</p>
