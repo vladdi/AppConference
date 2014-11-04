@@ -1,9 +1,7 @@
 <Alloy>
 	<Tab title="Videos">
-		<Window title="Videos" class="container">
-			<TableView>
-				<TableViewRow></TableViewRow>
-			</TableView>
+		<Window title="Videos">
+			
 		</Window>
 	</Tab>
 </Alloy>

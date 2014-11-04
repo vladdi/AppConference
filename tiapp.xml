@@ -51,9 +51,7 @@
         </splash>
         <theme>default</theme>
     </mobileweb>
-    <modules>
-        <module platform="android" version="2.3.3">com.navid.tabs</module>
-    </modules>
+    <modules/>
     <deployment-targets>
         <target device="iphone">false</target>
         <target device="ipad">false</target>
